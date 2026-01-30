@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://blkyyoapwotmd"]
+
+[ext_resource type="Texture2D" uid="uid://t2llpc1qwr2i" path="res://assets/img/circle.png" id="1_mv3iy"]
+[ext_resource type="Script" uid="uid://06ht2buj6rhn" path="res://fly.gd" id="1_qarim"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mv3iy"]
+radius = 4.0
+
+[node name="Fly" type="Node2D" unique_id=884368887]
+script = ExtResource("1_qarim")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1986586425]
+texture_filter = 1
+scale = Vector2(0.062499996, 0.062499996)
+texture = ExtResource("1_mv3iy")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=104138296]
+
+[node name="Shape" type="CollisionShape2D" parent="Hitbox" unique_id=1823114531]
+shape = SubResource("CircleShape2D_mv3iy")

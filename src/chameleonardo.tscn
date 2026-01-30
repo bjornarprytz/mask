@@ -10,13 +10,13 @@ script = ExtResource("1_20x5n")
 [node name="Body" type="Sprite2D" parent="." unique_id=1590053773]
 unique_name_in_owner = true
 texture_filter = 1
-position = Vector2(-9, 0)
+position = Vector2(-21.960245, -5.665103e-07)
 rotation = 1.5707964
+scale = Vector2(1, 1.8100153)
 texture = ExtResource("2_ch3hi")
 
 [node name="Head" type="Sprite2D" parent="." unique_id=1172554943]
 unique_name_in_owner = true
 texture_filter = 1
-position = Vector2(1, 0)
 texture = ExtResource("3_yq7re")
 offset = Vector2(16, 0)

@@ -7,12 +7,13 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 - Title screen
 
 - Environment
-  - Endless
   - Collage of forestry in many colors (palette?)
-  - 
 
 - Chameleon
-  - Movement
+  - Shoot tongue
+
+- Fly
+  - Pathing
 
 ### Extra
 
