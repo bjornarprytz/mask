@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://7owumt4j84sh"]
+
+[ext_resource type="Script" uid="uid://xtew6vgnua73" path="res://fly_path.gd" id="1_qjoji"]
+
+[sub_resource type="Curve2D" id="Curve2D_w1yo6"]
+
+[node name="FlyPath" type="Path2D" unique_id=2068923590]
+curve = SubResource("Curve2D_w1yo6")
+script = ExtResource("1_qjoji")

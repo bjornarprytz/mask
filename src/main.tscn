@@ -3,9 +3,7 @@
 [ext_resource type="Script" uid="uid://736gp2f48fi7" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c14js4o0ltlpm" path="res://world/world.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b50dkk78u0h5e" path="res://chameleonardo.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://blkyyoapwotmd" path="res://fly.tscn" id="4_1bvp3"]
-
-[sub_resource type="Curve2D" id="Curve2D_1bvp3"]
+[ext_resource type="AudioStream" uid="uid://djs62uk2y1ucf" path="res://assets/audio/OneMoreFly.mp3" id="5_lquwl"]
 
 [node name="Main" type="Node2D" unique_id=1144932589]
 script = ExtResource("1_ig7tw")
@@ -15,15 +13,14 @@ chameleonardo = NodePath("../Chameleonardo")
 
 [node name="Chameleonardo" parent="." unique_id=2138181651 instance=ExtResource("3_h2yge")]
 unique_name_in_owner = true
-position = Vector2(640, 360)
+position = Vector2(663, 328)
 rotation = -1.5707964
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1307047643]
 unique_name_in_owner = true
 position = Vector2(640, 360)
+zoom = Vector2(2, 2)
 
-[node name="Fly" parent="." unique_id=884368887 instance=ExtResource("4_1bvp3")]
-position = Vector2(747, 312)
-
-[node name="Path2D" type="Path2D" parent="." unique_id=433648295]
-curve = SubResource("Curve2D_1bvp3")
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=615779683]
+stream = ExtResource("5_lquwl")
+autoplay = true

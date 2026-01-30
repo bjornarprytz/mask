@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://5oe6jb5lecg"]
+
+[ext_resource type="Texture2D" uid="uid://d04whl1qlncxt" path="res://assets/img/monstera.png" id="1_kburo"]
+
+[node name="Feature" type="Node2D" unique_id=806389912]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=425616088]
+texture_filter = 1
+texture = ExtResource("1_kburo")

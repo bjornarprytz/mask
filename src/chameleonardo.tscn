@@ -3,6 +3,63 @@
 [ext_resource type="Script" uid="uid://djhoi0abhg5ug" path="res://chameleonardo.gd" id="1_20x5n"]
 [ext_resource type="Texture2D" uid="uid://ct5b805pkx24r" path="res://assets/img/water-cooler.png" id="2_ch3hi"]
 [ext_resource type="Texture2D" uid="uid://but5ope2qlm27" path="res://assets/img/spades-medium.png" id="3_yq7re"]
+[ext_resource type="Texture2D" uid="uid://cy2hqrjani3ot" path="res://assets/img/eye_eye_captain-sheet.png" id="4_mul50"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14qgy"]
+size = Vector2(217.99997, 434)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14qgy"]
+atlas = ExtResource("4_mul50")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsurm"]
+atlas = ExtResource("4_mul50")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04num"]
+atlas = ExtResource("4_mul50")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju7in"]
+atlas = ExtResource("4_mul50")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pbch"]
+atlas = ExtResource("4_mul50")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6d5d"]
+atlas = ExtResource("4_mul50")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7pbch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14qgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsurm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04num")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju7in")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pbch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6d5d")
+}],
+"loop": true,
+"name": &"eye",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mul50"]
+size = Vector2(217.99997, 434)
 
 [node name="Chameleonardo" type="Node2D" unique_id=2138181651]
 script = ExtResource("1_20x5n")
@@ -20,3 +77,42 @@ unique_name_in_owner = true
 texture_filter = 1
 texture = ExtResource("3_yq7re")
 offset = Vector2(16, 0)
+
+[node name="LeftEyeSensor" type="Area2D" parent="Head" unique_id=1614225859]
+unique_name_in_owner = true
+position = Vector2(9, 0)
+
+[node name="Shape" type="CollisionShape2D" parent="Head/LeftEyeSensor" unique_id=1624143151]
+position = Vector2(1, -109)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_14qgy")
+
+[node name="LeftEye" type="AnimatedSprite2D" parent="Head" unique_id=890196062]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(22, -10)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_7pbch")
+animation = &"eye"
+
+[node name="RightEyeSensor" type="Area2D" parent="Head" unique_id=1370419787]
+unique_name_in_owner = true
+position = Vector2(9, 0)
+
+[node name="Shape" type="CollisionShape2D" parent="Head/RightEyeSensor" unique_id=1663243235]
+position = Vector2(1, 109)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_mul50")
+
+[node name="RightEye" type="AnimatedSprite2D" parent="Head" unique_id=1038802028]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(22, 11)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_7pbch")
+animation = &"eye"
+
+[connection signal="area_entered" from="Head/LeftEyeSensor" to="." method="_on_left_eye_sensor_area_entered"]
+[connection signal="area_exited" from="Head/LeftEyeSensor" to="." method="_on_left_eye_sensor_area_exited"]
+[connection signal="area_entered" from="Head/RightEyeSensor" to="." method="_on_right_eye_sensor_area_entered"]
+[connection signal="area_exited" from="Head/RightEyeSensor" to="." method="_on_right_eye_sensor_area_exited"]

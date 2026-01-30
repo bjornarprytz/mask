@@ -5,9 +5,9 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 ## TODO
 
 - Title screen
+  - Pick controller
 
-- Environment
-  - Collage of forestry in many colors (palette?)
+- Palette
 
 - Chameleon
   - Shoot tongue

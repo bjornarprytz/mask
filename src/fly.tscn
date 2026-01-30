@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_mv3iy"]
 radius = 4.0
 
-[node name="Fly" type="Node2D" unique_id=884368887]
+[node name="Fly" type="PathFollow2D" unique_id=1397155515]
 script = ExtResource("1_qarim")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1986586425]

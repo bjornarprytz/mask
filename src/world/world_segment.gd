@@ -10,9 +10,13 @@ func wake_up() -> void:
 	set_process(true)
 
 func _ready() -> void:
-	for i in range(randi_range(4, 10)):
+	for i in range(randi_range(20, 50)):
 		await delay(0.03)
 		spawn_feature(_random_position_within())
+	
+	for i in range(randi_range(10, 20)):
+		await delay(0.1)
+		spawn_fly(_random_position_within())
 
 func _random_position_within() -> Vector2:
 	return Vector2(
@@ -23,6 +27,14 @@ func _random_position_within() -> Vector2:
 func delay(t: float):
 	return get_tree().create_timer(t).timeout
 
+func spawn_fly(local_pos: Vector2) -> void:
+	var fly = Create.fly()
+	fly.position = local_pos
+	add_child(fly)
+
 func spawn_feature(local_pos: Vector2) -> void:
-	# TODO: Spawn a feature (monstera leaf or rock) at the given local position
-	pass
+	var feature = Create.feature(Utility.random_color())
+	feature.position = local_pos
+	feature.rotation_degrees = randf_range(0, 360)
+	feature.scale = Vector2.ONE * randf_range(1.5, 3.0)
+	add_child(feature)
