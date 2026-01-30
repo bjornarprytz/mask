@@ -12,10 +12,6 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 
 - Palette
 
-- Chameleon
-  - Shoot tongue
-  - Lerp body rotation
-
 ### Extra
 
 - itch.io

@@ -8,6 +8,7 @@ extends Node2D
 
 @onready var body: Sprite2D = %Body
 @onready var head: Sprite2D = %Head
+@onready var tongue_anchor: Node2D = %TongueAnchor
 
 @onready var left_eye: AnimatedSprite2D = %LeftEye
 @onready var right_eye: AnimatedSprite2D = %RightEye
@@ -17,6 +18,8 @@ extends Node2D
 
 var left_focus: Node2D = null
 var right_focus: Node2D = null
+
+var tongue: Tongue = null
 
 func _process(delta: float) -> void:
 	var input_vector = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down", .1)
@@ -39,6 +42,20 @@ func _process(delta: float) -> void:
 		
 	focus_on()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("shoot"):
+		if (tongue != null): # Acts as a cooldown
+			return
+		tongue = Create.tongue()
+		tongue_anchor.add_child(tongue)
+		tongue.position = Vector2.ZERO
+		tongue.rotation = 0.0
+		var secondary_vector = Input.get_vector("secondary_left", "secondary_right", "secondary_up", "secondary_down", .1)
+		tongue.shoot(tongue_anchor.global_position + secondary_vector.normalized() * 200.0)
+		tongue.hit.connect(_on_hit, CONNECT_ONE_SHOT)
+
+func _on_hit(fly: Fly) -> void:
+	fly.die()
 
 func focus_on() -> void:
 	focus_eye(left_eye, left_focus)

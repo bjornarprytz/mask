@@ -4,6 +4,10 @@ extends PathFollow2D
 var path: FlyPath
 @export var move_speed: float = 20.0
 
+func die():
+	queue_free()
+	path.queue_free()
+
 func _ready() -> void:
 	path = Create.fly_path()
 	get_tree().root.call_deferred("add_child", path)
