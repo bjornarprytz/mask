@@ -9,9 +9,6 @@ Stipulation: Text based
 
 - Import the project into Godot
 
-- Get Butler API key from [itch.io](https://itch.io/user/settings/api-keys)
-- Publish github repo
-- Add key to GitHub repository secrets as BUTLER_API_KEY [link](https://github.com/bjornarprytz/mask/settings/secrets/actions)
 - Push release with `./push_release.sh`
 - Go [here](https://thewarlock.itch.io/mask/edit) and edit game:
   - Check "This file will be played in the browser"
