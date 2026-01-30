@@ -1,0 +1,73 @@
+[gd_resource type="Theme" format=3 uid="uid://cwi2l6qtt6la6"]
+
+[ext_resource type="Texture2D" uid="uid://b3j5t5dtouj45" path="res://assets/panel-texture.png" id="1_ekht3"]
+[ext_resource type="FontFile" uid="uid://dm08mvl84ygq3" path="res://assets/fonts/Fira_Code/static/FiraCode-Regular.ttf" id="2_ekht3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arlvn"]
+content_margin_left = 45.0
+content_margin_top = 35.0
+content_margin_right = 45.0
+content_margin_bottom = 35.0
+bg_color = Color(0.06352941, 0.23294118, 0.16235293, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0.6431373, 0.39607844, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bq3ui"]
+content_margin_left = 45.0
+content_margin_top = 35.0
+content_margin_right = 45.0
+content_margin_bottom = 35.0
+bg_color = Color(0.07058824, 0.25882354, 0.18039216, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0.6431373, 0.39607844, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6bo0"]
+content_margin_left = 45.0
+content_margin_top = 35.0
+content_margin_right = 45.0
+content_margin_bottom = 35.0
+bg_color = Color(0.060000006, 0.22000001, 0.15333334, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0.6431373, 0.39607844, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pfd5p"]
+content_margin_left = 45.0
+content_margin_top = 35.0
+content_margin_right = 45.0
+content_margin_bottom = 35.0
+texture = ExtResource("1_ekht3")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[resource]
+default_font = ExtResource("2_ekht3")
+default_font_size = 32
+Button/styles/hover = SubResource("StyleBoxFlat_arlvn")
+Button/styles/normal = SubResource("StyleBoxFlat_bq3ui")
+Button/styles/pressed = SubResource("StyleBoxFlat_q6bo0")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_pfd5p")
