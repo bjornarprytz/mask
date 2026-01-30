@@ -17,6 +17,8 @@ var last_point: Vector2 = Vector2.ZERO
 var last_out_tangent: Vector2 = Vector2.ZERO
 var direction_angle: float = 0.0
 var noise: FastNoiseLite
+var follower: PathFollow2D = null
+var path_changed: bool = false
 
 func _ready() -> void:
 	# Initialize noise for smooth curve generation
@@ -35,15 +37,23 @@ func _ready() -> void:
 		_add_next_point()
 
 func _process(_delta: float) -> void:
-	# Check if we need to extend the path
-	var followers = get_children().filter(func(child): return child is PathFollow2D)
-	if followers.size() > 0:
-		var follower = followers[0] as PathFollow2D
-		var remaining_distance = curve.get_baked_length() - follower.progress
-		
-		# If the follower is getting close to the end, add more points
-		if remaining_distance < lookahead_distance:
-			_add_next_point()
+	# Cache follower reference if not found
+	if follower == null:
+		for child in get_children():
+			if child is PathFollow2D:
+				follower = child
+				break
+	
+	if follower == null:
+		return
+	
+	var path_was_changed = false
+	var remaining_distance = curve.get_baked_length() - follower.progress
+	
+	# If the follower is getting close to the end, add more points
+	if remaining_distance < lookahead_distance:
+		_add_next_point()
+		path_was_changed = true
 	
 	# Remove old points if we have too many
 	if curve.point_count > max_points:
@@ -54,10 +64,10 @@ func _process(_delta: float) -> void:
 		var segment_removed = old_length - new_length
 		
 		# Adjust follower progress to compensate for removed point
-		for child in get_children():
-			if child is PathFollow2D:
-				child.progress = max(0, child.progress - segment_removed)
+		follower.progress = max(0, follower.progress - segment_removed)
+		path_was_changed = true
 	
+	# Always redraw to update the path start position as the fly moves
 	queue_redraw()
 
 func set_direction_from_fly(fly_progress: float) -> void:
@@ -98,12 +108,11 @@ func _add_next_point() -> void:
 	last_out_tangent = out_tangent
 
 func _draw() -> void:
-	if curve == null or curve.point_count < 2:
+	if curve == null or curve.point_count < 2 or follower == null:
 		return
 	
-	# Draw dashed line from the fly's current position forward
-	var followers = get_children().filter(func(child): return child is PathFollow2D)
-	var start_draw_distance = followers[0].progress if followers.size() > 0 else 0.0
+	# Use cached follower reference
+	var start_draw_distance = follower.progress
 	
 	# Calculate end draw distance
 	var total_length = curve.get_baked_length()
@@ -117,20 +126,21 @@ func _draw() -> void:
 		var dash_start = current_distance
 		var dash_end = min(current_distance + dash_length, end_draw_distance)
 		
-		# Draw this dash segment
-		var start_pos = curve.sample_baked(dash_start)
-		var end_pos = curve.sample_baked(dash_end)
-		
-		# Sample multiple points for smoother dashes on curves
-		var steps = max(2, int((dash_end - dash_start) / 5.0))
-		var dash_points: PackedVector2Array = []
-		
-		for i in range(steps + 1):
-			var t = dash_start + (dash_end - dash_start) * (float(i) / steps)
-			dash_points.append(curve.sample_baked(t))
-		
-		# Draw the polyline for this dash
-		if dash_points.size() >= 2:
+		# Simplified drawing - just use start and end points for small dashes
+		if dash_end - dash_start < 3.0:
+			var start_pos = curve.sample_baked(dash_start)
+			var end_pos = curve.sample_baked(dash_end)
+			draw_line(start_pos, end_pos, line_color, line_width, true)
+		else:
+			# Sample multiple points only for longer dashes
+			var steps = max(2, int((dash_end - dash_start) / 5.0))
+			var dash_points: PackedVector2Array = []
+			dash_points.resize(steps + 1)
+			
+			for i in range(steps + 1):
+				var t = dash_start + (dash_end - dash_start) * (float(i) / steps)
+				dash_points[i] = curve.sample_baked(t)
+			
 			draw_polyline(dash_points, line_color, line_width, true)
 		
 		current_distance += dash_pattern_length

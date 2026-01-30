@@ -3,7 +3,8 @@ extends Node2D
 
 @export var eye_frame_count: int = 6
 
-@export var move_speed: float = 300.0
+@export var move_speed: float = 100.0
+@export var rotation_speed: float = 2.0
 
 @onready var body: Sprite2D = %Body
 @onready var head: Sprite2D = %Head
@@ -21,8 +22,13 @@ func _process(delta: float) -> void:
 	var input_vector = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down", .1)
 	
 	if input_vector != Vector2.ZERO:
-		position += input_vector * move_speed * delta
-		rotation = input_vector.angle()
+		# Rotate towards the input direction
+		var target_angle = input_vector.angle()
+		rotation = lerp_angle(rotation, target_angle, rotation_speed * delta)
+		
+		# Move forward based on current rotation
+		var forward = Vector2.RIGHT.rotated(rotation)
+		position += forward * input_vector.length() * move_speed * delta
 
 	var secondary_vector = Input.get_vector("secondary_left", "secondary_right", "secondary_up", "secondary_down", .1)
 
@@ -51,11 +57,15 @@ func focus_eye(eye: AnimatedSprite2D, node: Node) -> void:
 	eye.global_rotation = to_position.angle()
 
 func _on_right_eye_sensor_area_entered(area: Area2D) -> void:
+	if (right_focus != null):
+		return
 	if (area.owner is Fly):
 		right_focus = area.owner
 
 
 func _on_left_eye_sensor_area_entered(area: Area2D) -> void:
+	if (left_focus != null):
+		return
 	if (area.owner is Fly):
 		left_focus = area.owner.owner
 

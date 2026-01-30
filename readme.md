@@ -5,15 +5,16 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 ## TODO
 
 - Title screen
-  - Pick controller
+  - Pick controller / keyboard
+
+- Controls
+  - Keyboard
 
 - Palette
 
 - Chameleon
   - Shoot tongue
-
-- Fly
-  - Pathing
+  - Lerp body rotation
 
 ### Extra
 
