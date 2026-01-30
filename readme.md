@@ -2,18 +2,17 @@
 
 game on itch.io: [link](https://thewarlock.itch.io/mask)
 
-Stipulation: Text based
- 
-
 ## TODO
 
-- Import the project into Godot
+- Title screen
 
-- Push release with `./push_release.sh`
-- Go [here](https://thewarlock.itch.io/mask/edit) and edit game:
-  - Check "This file will be played in the browser"
-  - Set viewport dimensions (normal: 1280x720)
-  - Check SharedArrayBuffer
+- Environment
+  - Endless
+  - Collage of forestry in many colors (palette?)
+  - 
+
+- Chameleon
+  - Movement
 
 ### Extra
 
