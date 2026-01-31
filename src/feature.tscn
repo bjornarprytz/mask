@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://5oe6jb5lecg"]
+[gd_scene load_steps=3 format=3 uid="uid://5oe6jb5lecg"]
 
-[ext_resource type="Texture2D" uid="uid://d04whl1qlncxt" path="res://assets/img/monstera.png" id="1_kburo"]
 [ext_resource type="Script" uid="uid://cfeqcf7u7y88g" path="res://feature.gd" id="1_q8fwa"]
+[ext_resource type="Texture2D" uid="uid://smredlx6tc7s" path="res://assets/img/monstera-leaf-flat.png" id="2_q8fwa"]
 
-[node name="Feature" type="Node2D" unique_id=806389912]
+[node name="Feature" type="Node2D"]
 script = ExtResource("1_q8fwa")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=425616088]
-texture_filter = 1
-texture = ExtResource("1_kburo")
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 4
+texture = ExtResource("2_q8fwa")

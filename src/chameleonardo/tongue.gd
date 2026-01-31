@@ -5,7 +5,7 @@ extends Node2D
 @onready var ball: Sprite2D = %Ball
 @onready var hitbox: Area2D = %Hitbox
 
-@export var duration: float = .2
+@export var duration: float = .5
 var target_vector: Vector2
 var tween: Tween
 

@@ -28,6 +28,7 @@ Create="*res://autoloads/factory.gd"
 Audio="*res://autoloads/audio_manager.gd"
 NodeEffects="*res://autoloads/node_effects.gd"
 Controls="*res://autoloads/controls.tscn"
+Palette="*res://autoloads/palette.tscn"
 
 [display]
 

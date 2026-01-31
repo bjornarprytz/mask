@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d04whl1qlncxt"
-path="res://.godot/imported/monstera.png-5242f93306c3050b5d2f9efab70f3e2f.ctex"
+uid="uid://denv3vhxhl0iq"
+path="res://.godot/imported/monstera-leaf-textured.png-6ba8014962db4966a7cdcf96293d953e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/monstera.png"
-dest_files=["res://.godot/imported/monstera.png-5242f93306c3050b5d2f9efab70f3e2f.ctex"]
+source_file="res://assets/img/monstera-leaf-textured.png"
+dest_files=["res://.godot/imported/monstera-leaf-textured.png-6ba8014962db4966a7cdcf96293d953e.ctex"]
 
 [params]
 

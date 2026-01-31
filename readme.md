@@ -4,10 +4,6 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 
 ## TODO
 
-- Tweak tongue
-  - Camera zooms in a bit
-  - Juicy death effect
-
 - Player
   - Change color
   - Stealth mechanics
@@ -15,6 +11,8 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
   - World
     - Palette
 
+- Tweak tongue
+  - Juicy death effect
 - Tweak flies
   - Avoid player (if not in stealth)
 

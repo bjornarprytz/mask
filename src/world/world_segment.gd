@@ -10,7 +10,7 @@ func wake_up() -> void:
 	set_process(true)
 
 func _ready() -> void:
-	for i in range(randi_range(20, 50)):
+	for i in range(randi_range(5, 10)):
 		await delay(0.03)
 		spawn_feature(_random_position_within())
 	
@@ -33,8 +33,7 @@ func spawn_fly(local_pos: Vector2) -> void:
 	add_child(fly)
 
 func spawn_feature(local_pos: Vector2) -> void:
-	var feature = Create.feature(Utility.random_color())
+	var feature = Create.feature(Palette.colors.pick_random())
 	feature.position = local_pos
 	feature.rotation_degrees = randf_range(0, 360)
-	feature.scale = Vector2.ONE * randf_range(1.5, 3.0)
 	add_child(feature)
