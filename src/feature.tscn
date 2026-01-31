@@ -9,3 +9,11 @@ script = ExtResource("1_q8fwa")
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 4
 texture = ExtResource("2_q8fwa")
+
+[node name="Hitbox" type="Area2D" parent="Sprite"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+
+[node name="Shape" type="CollisionPolygon2D" parent="Sprite/Hitbox"]
+polygon = PackedVector2Array(-133, -233, -55, -238, -13, -225, 12, -225, 66, -194, 111, -163, 154, -112, 190, -92, 217, -25, 225, -4, 238, 15, 242, 66, 233, 83, 242, 105, 233, 135, 201, 175, 200, 189, 181, 212, 132, 238, 91, 243, 64, 230, 46, 207, 28, 168, 32, 213, 19, 236, -10, 251, -50, 253, -78, 242, -143, 193, -160, 172, -180, 148, -208, 100, -205, 63, -210, 48, -215, -10, -207, -31, -205, -64, -196, -96, -190, -125, -161, -171, -135, -207)

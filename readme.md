@@ -4,16 +4,21 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 
 ## TODO
 
+- Music slowdown
+- Keyboard movement
+
 - Player
   - Stealth mechanics
     - Flies avoid player
-  - Eyes twitch around when there's no target
 
 - Tweak tongue
   - Juicy death effect
-  - Range?
 
 - Tweak palette
+
+- Style
+  - Font
+  - Title screen
 
 - Visual effects
   - Shadow on the player
@@ -28,7 +33,12 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
   - Flies
     - Buzz
     - Splat
-  - Music slowdown
+
+## Nice to have
+
+- Player
+  - Eyes twitch around when there's no target
+  - Tongue range
 
 ### Extra
 

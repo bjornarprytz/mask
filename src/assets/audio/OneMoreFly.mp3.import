@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/OneMoreFly.mp3-ac4bf5800fb9ee7abb938a1f423c22
 [params]
 
 loop=true
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

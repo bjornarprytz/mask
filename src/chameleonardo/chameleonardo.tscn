@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://b50dkk78u0h5e"]
+[gd_scene load_steps=34 format=3 uid="uid://b50dkk78u0h5e"]
 
 [ext_resource type="Script" uid="uid://djhoi0abhg5ug" path="res://chameleonardo/chameleonardo.gd" id="1_20x5n"]
 [ext_resource type="Texture2D" uid="uid://x24xq6atfo64" path="res://assets/img/chameleon-sheet.png" id="2_2uhhw"]
 [ext_resource type="PackedScene" uid="uid://b50jnsr1emch2" path="res://chameleonardo/head.tscn" id="3_2uhhw"]
+[ext_resource type="Texture2D" uid="uid://d4wbs3d0ne78" path="res://assets/img/skink.png" id="3_mwsuo"]
 [ext_resource type="Texture2D" uid="uid://btxfqugpryg5b" path="res://assets/img/dead_men_tell_no_tails.png" id="5_14qgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mwsuo"]
@@ -45,9 +46,45 @@ region = Rect2(960, 0, 120, 60)
 atlas = ExtResource("2_2uhhw")
 region = Rect2(1080, 0, 120, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qnwrm"]
-atlas = ExtResource("2_2uhhw")
-region = Rect2(1200, 0, 120, 60)
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0ykk"]
+atlas = ExtResource("3_mwsuo")
+region = Rect2(0, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87yhr"]
+atlas = ExtResource("3_mwsuo")
+region = Rect2(120, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcddu"]
+atlas = ExtResource("3_mwsuo")
+region = Rect2(240, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjg2d"]
+atlas = ExtResource("3_mwsuo")
+region = Rect2(360, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ssiu"]
+atlas = ExtResource("3_mwsuo")
+region = Rect2(480, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejijo"]
+atlas = ExtResource("3_mwsuo")
+region = Rect2(600, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjjtt"]
+atlas = ExtResource("3_mwsuo")
+region = Rect2(720, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyd2l"]
+atlas = ExtResource("3_mwsuo")
+region = Rect2(840, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iah2i"]
+atlas = ExtResource("3_mwsuo")
+region = Rect2(960, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v05o"]
+atlas = ExtResource("3_mwsuo")
+region = Rect2(1080, 0, 120, 60)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o1yb8"]
 animations = [{
@@ -81,12 +118,44 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fgo6h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qnwrm")
 }],
 "loop": false,
 "name": &"walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0ykk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87yhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcddu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjg2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ssiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejijo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjjtt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyd2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iah2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v05o")
+}],
+"loop": true,
+"name": &"white-walk",
 "speed": 5.0
 }]
 
@@ -133,18 +202,25 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2uhhw"]
+height = 74.0
+
 [node name="Chameleonardo" type="Node2D"]
 script = ExtResource("1_20x5n")
+body_frame_count = null
+move_speed = null
+rotation_speed = null
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 texture_filter = 1
-position = Vector2(-25, -4)
+position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_o1yb8")
-animation = &"walk"
+animation = &"white-walk"
 
 [node name="Head" parent="." instance=ExtResource("3_2uhhw")]
 unique_name_in_owner = true
+position = Vector2(25, 1)
 
 [node name="TongueAnchor" type="Node2D" parent="Head"]
 unique_name_in_owner = true
@@ -153,7 +229,18 @@ position = Vector2(27, 0)
 
 [node name="Tail" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-88, -2)
+position = Vector2(-63, -1)
 sprite_frames = SubResource("SpriteFrames_ahm5s")
 animation = &"wag"
 autoplay = "wag"
+
+[node name="ChameleSense" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(25, 1)
+collision_layer = 3
+collision_mask = 2
+
+[node name="Shape" type="CollisionShape2D" parent="ChameleSense"]
+position = Vector2(-16, 0)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_2uhhw")
