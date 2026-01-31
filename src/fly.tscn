@@ -1,20 +1,45 @@
-[gd_scene format=3 uid="uid://blkyyoapwotmd"]
+[gd_scene load_steps=3 format=3 uid="uid://blkyyoapwotmd"]
 
-[ext_resource type="Texture2D" uid="uid://t2llpc1qwr2i" path="res://assets/img/circle.png" id="1_mv3iy"]
 [ext_resource type="Script" uid="uid://06ht2buj6rhn" path="res://fly.gd" id="1_qarim"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mv3iy"]
-radius = 4.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv3iy"]
+size = Vector2(12, 8)
 
-[node name="Fly" type="PathFollow2D" unique_id=1397155515]
+[node name="Fly" type="PathFollow2D"]
 script = ExtResource("1_qarim")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=1986586425]
-texture_filter = 1
-scale = Vector2(0.062499996, 0.062499996)
-texture = ExtResource("1_mv3iy")
+[node name="RWing" type="Node2D" parent="."]
+unique_name_in_owner = true
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=104138296]
+[node name="RForm" type="RichTextLabel" parent="RWing"]
+unique_name_in_owner = true
+offset_left = 11.0
+offset_top = -2.0
+offset_right = 57.25183
+offset_bottom = 41.0
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+text = "b"
+fit_content = true
+scroll_active = false
 
-[node name="Shape" type="CollisionShape2D" parent="Hitbox" unique_id=1823114531]
-shape = SubResource("CircleShape2D_mv3iy")
+[node name="LWing" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="LForm" type="RichTextLabel" parent="LWing"]
+unique_name_in_owner = true
+offset_left = 11.0
+offset_top = 2.0
+offset_right = 57.25183
+offset_bottom = 45.0
+rotation = 1.5707964
+scale = Vector2(-0.5, 0.5)
+text = "b"
+fit_content = true
+scroll_active = false
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_mv3iy")

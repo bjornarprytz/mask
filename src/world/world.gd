@@ -3,6 +3,9 @@ extends Node2D
 
 @export var chameleonardo: Chameleonardo
 
+@export var spawn_interval: float = 1.0
+@export var spawn_wave_size: float = 10.0
+
 var segments: Dictionary[Vector2i, WorldSegment] = {}
 
 var current_segment_coord: Vector2i
@@ -14,6 +17,8 @@ func _ready() -> void:
 		for y in range(current_segment_coord.y - 1, current_segment_coord.y + 2):
 			create_or_wake_up_segment_at_coords(Vector2i(x, y))
 
+
+var elapsed_time: float = 0.0
 
 func _process(_delta: float) -> void:
 	var new_segment_coord = get_segment_coords_at_position(chameleonardo.global_position)
@@ -29,6 +34,19 @@ func _process(_delta: float) -> void:
 				create_or_wake_up_segment_at_coords(Vector2i(x, y))
 		
 		current_segment_coord = new_segment_coord
+	
+	elapsed_time += _delta
+	if elapsed_time >= spawn_interval:
+		elapsed_time = 0.0
+		# Spawn 10 flies in a band around the player
+		for i in range(spawn_wave_size):
+			var angle = randf_range(0, TAU)
+			var distance = randf_range(400.0, 600.0)
+			var spawn_pos = chameleonardo.global_position + Vector2.RIGHT.rotated(angle) * distance
+			var fly = Create.fly()
+			get_tree().root.call_deferred("add_child", fly)
+			fly.global_position = spawn_pos
+		
 
 func get_segment_coords_at_position(pos: Vector2i) -> Vector2i:
 	return Vector2i(

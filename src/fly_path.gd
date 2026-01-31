@@ -11,7 +11,7 @@ extends Path2D
 @export var gap_length: float = 10.0
 @export var line_width: float = 1.0
 @export var line_color: Color = Color.WHITE
-@export var draw_distance: float = 150.0 ## How far ahead of the fly to draw the path (0 = infinite)
+@export var draw_distance: float = 0.0 ## How far ahead of the fly to draw the path ( < 0 => infinite)
 
 var last_point: Vector2 = Vector2.ZERO
 var last_out_tangent: Vector2 = Vector2.ZERO
@@ -47,13 +47,11 @@ func _process(_delta: float) -> void:
 	if follower == null:
 		return
 	
-	var path_was_changed = false
 	var remaining_distance = curve.get_baked_length() - follower.progress
 	
 	# If the follower is getting close to the end, add more points
 	if remaining_distance < lookahead_distance:
 		_add_next_point()
-		path_was_changed = true
 	
 	# Remove old points if we have too many
 	if curve.point_count > max_points:
@@ -65,7 +63,6 @@ func _process(_delta: float) -> void:
 		
 		# Adjust follower progress to compensate for removed point
 		follower.progress = max(0, follower.progress - segment_removed)
-		path_was_changed = true
 	
 	# Always redraw to update the path start position as the fly moves
 	queue_redraw()
@@ -116,7 +113,7 @@ func _draw() -> void:
 	
 	# Calculate end draw distance
 	var total_length = curve.get_baked_length()
-	var end_draw_distance = total_length if draw_distance <= 0 else min(start_draw_distance + draw_distance, total_length)
+	var end_draw_distance = total_length if draw_distance < 0 else min(start_draw_distance + draw_distance, total_length)
 	
 	# Draw dashed line along the curve
 	var current_distance: float = start_draw_distance
