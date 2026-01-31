@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://blkyyoapwotmd"]
+[gd_scene load_steps=4 format=3 uid="uid://blkyyoapwotmd"]
 
 [ext_resource type="Script" uid="uid://06ht2buj6rhn" path="res://fly.gd" id="1_qarim"]
+[ext_resource type="Theme" uid="uid://d2ql40tpyyiaj" path="res://bug_wings_theme.tres" id="2_7c42i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mv3iy"]
 size = Vector2(12, 8)
@@ -19,6 +20,7 @@ offset_right = 57.25183
 offset_bottom = 41.0
 rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
+theme = ExtResource("2_7c42i")
 text = "b"
 fit_content = true
 scroll_active = false
@@ -34,6 +36,7 @@ offset_right = 57.25183
 offset_bottom = 45.0
 rotation = 1.5707964
 scale = Vector2(-0.5, 0.5)
+theme = ExtResource("2_7c42i")
 text = "b"
 fit_content = true
 scroll_active = false

@@ -4,9 +4,6 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 
 ## TODO
 
-- Tweak flies
-  - Avoid player
-
 - Tweak tongue
   - Click
   - Player movement stops
@@ -22,6 +19,9 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
   - Eyes twitch around when there's no target
   - World
     - Palette
+
+- Tweak flies
+  - Avoid player (if not in stealth)
 
 ### Extra
 
