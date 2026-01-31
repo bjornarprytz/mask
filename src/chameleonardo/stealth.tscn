@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtjtlwtb130rb"]
+
+[ext_resource type="Script" uid="uid://cas27fk5rmdbe" path="res://chameleonardo/stealth.gd" id="1_go1xl"]
+[ext_resource type="Texture2D" uid="uid://t2llpc1qwr2i" path="res://assets/img/circle.png" id="1_lagp6"]
+[ext_resource type="Shader" uid="uid://bf2a26kxnv6to" path="res://chameleonardo/ripples.gdshader" id="2_8vtwq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mwsuo"]
+radius = 66.0303
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgyqj"]
+shader = ExtResource("2_8vtwq")
+shader_parameter/ripple_frequency = 5.0000000596048
+shader_parameter/ripple_noise = 0.0
+shader_parameter/ripple_speed = 0.30000000447036
+shader_parameter/ripple_strength = 0.999999977648
+shader_parameter/ripple_width = 0.1
+shader_parameter/ripple_transparency = 0.0999999977648
+
+[node name="Stealth" type="Area2D"]
+script = ExtResource("1_go1xl")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_mwsuo")
+
+[node name="Visual" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_mgyqj")
+texture = ExtResource("1_lagp6")

@@ -10,6 +10,7 @@ extends Node2D
 @onready var head: Head = %Head
 @onready var tongue_anchor: Node2D = %TongueAnchor
 @onready var chamele_sense: Area2D = %ChameleSense
+@onready var stealth: Stealth = %Stealth
 
 var shoot_action: Shoot = null
 var is_shooting: bool = false
@@ -17,8 +18,6 @@ var is_shooting: bool = false
 var movement_distance = 10000.0 # Otherwise backwards movement doesn't animate from the get go
 
 var color_tween: Tween
-
-var stealth_range := 0.0
 
 func _process(delta: float) -> void:
 	if (not is_shooting):
@@ -97,7 +96,8 @@ func _move_body(delta: float) -> void:
 	movement_distance += distance
 
 	body.frame = int(movement_distance / 8) % body_frame_count
-	
+
+	_check_stealth(distance != 0.0)
 
 func _move_head(_delta: float) -> void:
 	var aim_vector = Controls.get_aim(head.global_position)
@@ -106,3 +106,15 @@ func _move_head(_delta: float) -> void:
 		head.global_rotation = aim_vector.angle()
 	else:
 		head.rotation = lerp_angle(head.rotation, 0.0, 0.1)
+
+func _check_stealth(is_moving: bool) -> void:
+	var level := 0
+
+	var feature = _get_feature()
+	if feature == null or feature.color != self.modulate:
+		level += 1
+	if is_shooting:
+		level += 1
+	if is_moving:
+		level += 1
+	stealth.set_level(level)

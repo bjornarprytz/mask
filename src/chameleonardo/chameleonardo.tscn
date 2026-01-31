@@ -1,10 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://b50dkk78u0h5e"]
+[gd_scene load_steps=35 format=3 uid="uid://b50dkk78u0h5e"]
 
 [ext_resource type="Script" uid="uid://djhoi0abhg5ug" path="res://chameleonardo/chameleonardo.gd" id="1_20x5n"]
 [ext_resource type="Texture2D" uid="uid://x24xq6atfo64" path="res://assets/img/chameleon-sheet.png" id="2_2uhhw"]
 [ext_resource type="PackedScene" uid="uid://b50jnsr1emch2" path="res://chameleonardo/head.tscn" id="3_2uhhw"]
 [ext_resource type="Texture2D" uid="uid://d4wbs3d0ne78" path="res://assets/img/skink.png" id="3_mwsuo"]
 [ext_resource type="Texture2D" uid="uid://btxfqugpryg5b" path="res://assets/img/dead_men_tell_no_tails.png" id="5_14qgy"]
+[ext_resource type="PackedScene" uid="uid://dtjtlwtb130rb" path="res://chameleonardo/stealth.tscn" id="6_x1u1u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mwsuo"]
 atlas = ExtResource("2_2uhhw")
@@ -207,6 +208,12 @@ height = 74.0
 
 [node name="Chameleonardo" type="Node2D"]
 script = ExtResource("1_20x5n")
+body_frame_count = null
+move_speed = null
+rotation_speed = null
+
+[node name="Stealth" parent="." instance=ExtResource("6_x1u1u")]
+unique_name_in_owner = true
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
