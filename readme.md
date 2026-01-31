@@ -4,12 +4,6 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 
 ## TODO
 
-- Title screen
-  - Pick controller / keyboard
-
-- Controls
-  - Keyboard
-
 - Palette
 
 ### Extra

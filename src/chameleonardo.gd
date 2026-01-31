@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 		var forward = Vector2.RIGHT.rotated(rotation)
 		position += forward * input_vector.length() * move_speed * delta
 
-	var secondary_vector = Input.get_vector("secondary_left", "secondary_right", "secondary_up", "secondary_down", .1)
+	var secondary_vector = get_secondary_vector()
 
 	if secondary_vector != Vector2.ZERO:
 		head.global_rotation = secondary_vector.angle()
@@ -41,6 +41,13 @@ func _process(delta: float) -> void:
 		head.rotation = lerp_angle(head.rotation, 0.0, 0.1)
 		
 	focus_on()
+
+func get_secondary_vector() -> Vector2:
+	if Events.control_scheme == Events.ControlScheme.GAMEPAD:
+		return Input.get_vector("secondary_left", "secondary_right", "secondary_up", "secondary_down", .1)
+	else:
+		var mouse_pos = get_global_mouse_position()
+		return mouse_pos - head.global_position
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):
@@ -50,7 +57,7 @@ func _input(event: InputEvent) -> void:
 		tongue_anchor.add_child(tongue)
 		tongue.position = Vector2.ZERO
 		tongue.rotation = 0.0
-		var secondary_vector = Input.get_vector("secondary_left", "secondary_right", "secondary_up", "secondary_down", .1)
+		var secondary_vector = get_secondary_vector()
 		tongue.shoot(tongue_anchor.global_position + secondary_vector.normalized() * 200.0)
 		tongue.hit.connect(_on_hit, CONNECT_ONE_SHOT)
 
