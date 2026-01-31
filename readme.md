@@ -4,19 +4,28 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 
 ## TODO
 
+- World
+  - Spawn way more flies
+  - Despawn if far away
+- Tweak flies
+  - Faster
+  - Avoid player
+
+- Tweak tongue
+  - Click
+  - Player movement stops
+  - Time slows down
+  - Camera zooms in a bit
+  - Player aims at a fly
+  - Release
+  - Tongue shoots out
+
+
 - Player
   - Change color
   - Stealth mechanics
   - Eyes twitch around when there's no target
-- Tweak tongue
-  - Speed
-  - Sound
-  - Hitbox
-- Tweak flies
-  - Faster
-  - Avoid player
 - Palette?
-
 
 ### Extra
 

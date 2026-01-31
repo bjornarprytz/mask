@@ -7,7 +7,7 @@ extends Node2D
 var feature_scene: PackedScene = preload("res://feature.tscn")
 var fly_path_scene: PackedScene = preload("res://fly_path.tscn")
 var fly_scene: PackedScene = preload("res://fly.tscn")
-var tongue_scene: PackedScene = preload("res://tongue.tscn")
+var tongue_scene: PackedScene = preload("res://chameleonardo/tongue.tscn")
 
 func feature(color: Color) -> Feature:
 	var feature_node = feature_scene.instantiate() as Feature

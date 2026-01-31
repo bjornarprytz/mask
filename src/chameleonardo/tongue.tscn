@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://w4n6wv7x3uef"]
+[gd_scene load_steps=0 format=3 uid="uid://w4n6wv7x3uef"]
 
-[ext_resource type="Script" uid="uid://dk6fnkjcwk3ql" path="res://tongue.gd" id="1_sc3er"]
+[ext_resource type="Script" uid="uid://dk6fnkjcwk3ql" path="res://chameleonardo/tongue.gd" id="1_sc3er"]
 [ext_resource type="Texture2D" uid="uid://t2llpc1qwr2i" path="res://assets/img/circle.png" id="1_vu47e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vu47e"]
