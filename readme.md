@@ -11,8 +11,24 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 
 - Tweak tongue
   - Juicy death effect
+  - Range?
 
 - Tweak palette
+
+- Visual effects
+  - Shadow on the player
+  - Particles on tongue (droplets)
+  - Screen shake on hit
+
+- Sound effects
+  - Tonguge
+    - Shoot
+    - Slurp
+    - Miss (funny sound?)
+  - Flies
+    - Buzz
+    - Splat
+  - Music slowdown
 
 ### Extra
 
