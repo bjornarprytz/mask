@@ -48,3 +48,40 @@ scroll_active = false
 [node name="Shape" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_mv3iy")
+
+[node name="Startle" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Startle"]
+offset_left = 1.0
+offset_top = 15.0
+offset_right = 3.0
+offset_bottom = 20.0
+
+[node name="ColorRect3" type="ColorRect" parent="Startle"]
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 14.0
+offset_bottom = 15.0
+rotation = -0.9160528
+
+[node name="ColorRect4" type="ColorRect" parent="Startle"]
+offset_left = 12.999999
+offset_top = -8.0
+offset_right = 14.999999
+offset_bottom = -3.0
+rotation = -1.8782824
+
+[node name="ColorRect2" type="ColorRect" parent="Startle"]
+offset_left = 1.0
+offset_top = -20.0
+offset_right = 3.0
+offset_bottom = -15.0
+
+[node name="ColorRect5" type="ColorRect" parent="Startle"]
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 18.0
+offset_bottom = 6.0
+rotation = -1.5707964

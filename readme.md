@@ -4,10 +4,6 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 
 ## TODO
 
-- Player
-  - Stealth mechanics
-    - Flies avoid player
-
 - Word game
   - Eat flies, get their letter added to the goal
 

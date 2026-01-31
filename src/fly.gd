@@ -10,6 +10,7 @@ var path: FlyPath
 @onready var l_wing: Node2D = %LWing
 @onready var r_form: RichTextLabel = %RForm
 @onready var l_form: RichTextLabel = %LForm
+@onready var startle: Node2D = %Startle
 
 @onready var flap_offset = randf()
 
@@ -62,3 +63,33 @@ func _process(delta: float) -> void:
 	r_wing.scale.y = flap
 
 	_check_distance_to_chameleonardo()
+
+func flee() -> void:
+	if !path or !Events.game:
+		return
+	
+	var chameleonardo = Events.game.chameleonardo
+	if chameleonardo == null:
+		return
+	
+	# Flicker the startle effect
+	startle.visible = true
+	var tween = create_tween()
+	tween.tween_interval(0.2)
+	tween.tween_callback(startle.hide)
+	tween.tween_interval(0.2)
+	tween.tween_callback(startle.show)
+	tween.tween_interval(0.2)
+	tween.tween_callback(startle.hide)
+	
+
+
+
+	# Calculate direction away from the chameleon
+	var direction_away = (global_position - chameleonardo.global_position).normalized()
+	
+	# Redirect the path in that direction
+	path.redirect_path(direction_away)
+	
+	# Increase speed when fleeing
+	move_speed = 400.0

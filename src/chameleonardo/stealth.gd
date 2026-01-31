@@ -2,7 +2,7 @@ class_name Stealth
 extends Area2D
 
 @onready var shape: CollisionShape2D = %Shape
-@onready var visual: Sprite2D = %Visual
+@onready var visual: Node2D = %Visual
 
 var change_tween: Tween
 
@@ -20,5 +20,10 @@ func _change_size(radius: float):
 	
 	change_tween = create_tween().set_parallel()
 	
-	change_tween.tween_property(shape.shape, "radius", radius, 1.0)
+	change_tween.tween_property(shape.shape, "radius", radius * 3, 1.0)
 	change_tween.tween_property(visual, "scale", Vector2.ONE * (radius / 20.0), 1.0)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if (area.owner is Fly):
+		area.owner.flee()

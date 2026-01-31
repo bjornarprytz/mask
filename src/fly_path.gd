@@ -77,6 +77,30 @@ func set_direction_from_fly(fly_progress: float) -> void:
 	if tangent != Vector2.ZERO:
 		direction_angle = tangent.angle()
 
+func redirect_path(new_direction: Vector2) -> void:
+	"""Redirect the path in a new direction, regenerating future points"""
+	if new_direction == Vector2.ZERO:
+		return
+	
+	# Set the new direction
+	direction_angle = new_direction.angle()
+	
+	# Keep only the first few points (the part already traveled)
+	var points_to_keep = min(3, curve.point_count)
+	while curve.point_count > points_to_keep:
+		curve.remove_point(curve.point_count - 1)
+	
+	# Update last point info from the remaining curve
+	if curve.point_count > 0:
+		var last_idx = curve.point_count - 1
+		last_point = curve.get_point_position(last_idx)
+		last_out_tangent = Vector2.RIGHT.rotated(direction_angle) * curve_strength
+		curve.set_point_out(last_idx, last_out_tangent)
+	
+	# Generate new points in the new direction
+	for i in range(max_points - curve.point_count):
+		_add_next_point()
+
 func _add_next_point() -> void:
 	var point_count = curve.point_count
 	
