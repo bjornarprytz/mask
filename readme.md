@@ -4,9 +4,6 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 
 ## TODO
 
-- Music slowdown
-- Keyboard movement
-
 - Player
   - Stealth mechanics
     - Flies avoid player

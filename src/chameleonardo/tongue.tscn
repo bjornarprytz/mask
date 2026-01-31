@@ -7,17 +7,18 @@
 radius = 64.0
 
 [node name="Tongue" type="Node2D"]
-modulate = Color(1, 0.41568628, 1, 1)
 script = ExtResource("1_sc3er")
 
 [node name="Stretch" type="ColorRect" parent="."]
 unique_name_in_owner = true
+self_modulate = Color(1, 0.41568628, 1, 1)
 offset_top = -5.0
 offset_right = 9.0
 offset_bottom = 5.0
 
 [node name="Ball" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+self_modulate = Color(1, 0.41568628, 1, 1)
 position = Vector2(9, 0)
 scale = Vector2(0.078125, 0.078125)
 texture = ExtResource("1_vu47e")

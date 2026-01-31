@@ -37,6 +37,8 @@ func _ready() -> void:
 	set_form(chars[randi_range(0, chars.length() - 1)])
 
 func _check_distance_to_chameleonardo() -> void:
+	if (!Events.game):
+		return
 	var chameleonardo = Events.game.chameleonardo
 	if chameleonardo == null:
 		return

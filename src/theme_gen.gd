@@ -18,6 +18,7 @@ var title_font_size = 64
 var panel_texture = preload("res://assets/panel-texture.png")
 
 var default_font = preload("res://assets/fonts/Fira_Code/static/FiraCode-Regular.ttf")
+var title_font = preload("res://assets/fonts/it-gridbit-demo/ITGridbitDemo-Regular.otf")
 var default_content_margins = content_margins(45, 35)
 
 func define_theme():
@@ -51,6 +52,11 @@ func define_theme():
 			axis_stretch_vertical = StyleBoxTexture.AXIS_STRETCH_MODE_TILE_FIT
 			
 		})
+	})
+	
+	define_variant_style("Title", "RichTextLabel", {
+		normal_font_size = title_font_size,
+		normal_font = title_font
 	})
 
 	define_style("Button", {
