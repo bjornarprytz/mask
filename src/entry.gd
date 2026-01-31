@@ -40,3 +40,7 @@ func _on_timer_timeout() -> void:
 
 	var tween = create_tween()
 	tween.tween_property(feature, "modulate:a", 1.0, 1.0)
+
+
+func _on_start_button_mouse_entered() -> void:
+	await NodeEffects.jiggle(start_button)
