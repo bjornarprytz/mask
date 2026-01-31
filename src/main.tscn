@@ -22,5 +22,6 @@ position = Vector2(640, 360)
 zoom = Vector2(2, 2)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("5_lquwl")
 autoplay = true

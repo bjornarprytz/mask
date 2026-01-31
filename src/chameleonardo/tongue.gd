@@ -3,12 +3,15 @@ extends Node2D
 
 @onready var stretch: ColorRect = %Stretch
 @onready var ball: Sprite2D = %Ball
+@onready var hitbox: Area2D = %Hitbox
 
 @export var duration: float = .2
 var target_vector: Vector2
 var tween: Tween
 
 signal hit(fly: Fly)
+signal retracted()
+signal done()
 
 func _process(_delta: float) -> void:
 	# Rotate the tongue towards the target vector
@@ -16,6 +19,7 @@ func _process(_delta: float) -> void:
 		global_rotation = target_vector.angle()
 
 func shoot(global_target: Vector2):
+	hitbox.monitoring = true
 	target_vector = global_target - global_position
 	var distance = target_vector.length()
 	# tween the tounge toward target
@@ -38,4 +42,8 @@ func _retract():
 	tween.set_parallel()
 	tween.tween_property(ball, "position", Vector2.ZERO, duration)
 	tween.chain()
-	tween.tween_callback(queue_free)
+	tween.tween_callback(_on_retracted)
+
+func _on_retracted():
+	retracted.emit()
+	done.emit()

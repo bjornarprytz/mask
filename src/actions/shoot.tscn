@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh2wv21kdf2hk"]
+
+[ext_resource type="Script" uid="uid://1ruo2q6j0uji" path="res://actions/shoot.gd" id="1_u0pn4"]
+[ext_resource type="PackedScene" uid="uid://w4n6wv7x3uef" path="res://chameleonardo/tongue.tscn" id="2_5qnoc"]
+
+[node name="Shoot" type="Node2D"]
+script = ExtResource("1_u0pn4")
+
+[node name="Tongue" parent="." instance=ExtResource("2_5qnoc")]
+unique_name_in_owner = true

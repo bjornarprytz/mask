@@ -10,6 +10,7 @@ enum ControlScheme {
 }
 
 var control_scheme: ControlScheme = ControlScheme.KEYBOARD
-var chameleonardo: Chameleonardo = null
+
+var game: Game
 
 signal game_over(win: bool)

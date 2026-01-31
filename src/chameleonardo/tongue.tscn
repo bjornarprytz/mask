@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://w4n6wv7x3uef"]
+[gd_scene load_steps=4 format=3 uid="uid://w4n6wv7x3uef"]
 
 [ext_resource type="Script" uid="uid://dk6fnkjcwk3ql" path="res://chameleonardo/tongue.gd" id="1_sc3er"]
 [ext_resource type="Texture2D" uid="uid://t2llpc1qwr2i" path="res://assets/img/circle.png" id="1_vu47e"]
@@ -6,24 +6,27 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_vu47e"]
 radius = 64.0
 
-[node name="Tongue" type="Node2D" unique_id=192698545]
+[node name="Tongue" type="Node2D"]
 script = ExtResource("1_sc3er")
 
-[node name="Stretch" type="ColorRect" parent="." unique_id=1666033971]
+[node name="Stretch" type="ColorRect" parent="."]
 unique_name_in_owner = true
 offset_top = -5.0
-offset_right = 24.0
-offset_bottom = 4.0
+offset_right = 9.0
+offset_bottom = 5.0
 
-[node name="Ball" type="Sprite2D" parent="." unique_id=2071846419]
+[node name="Ball" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(23, 0)
+position = Vector2(11, 0)
 scale = Vector2(0.125, 0.125)
 texture = ExtResource("1_vu47e")
 
-[node name="Hitbox" type="Area2D" parent="Ball" unique_id=107322918]
+[node name="Hitbox" type="Area2D" parent="Ball"]
+unique_name_in_owner = true
+monitoring = false
+monitorable = false
 
-[node name="Shape" type="CollisionShape2D" parent="Ball/Hitbox" unique_id=1805721341]
+[node name="Shape" type="CollisionShape2D" parent="Ball/Hitbox"]
 shape = SubResource("CircleShape2D_vu47e")
 
 [connection signal="area_entered" from="Ball/Hitbox" to="." method="_on_hitbox_area_entered"]

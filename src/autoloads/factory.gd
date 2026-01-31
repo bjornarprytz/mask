@@ -25,3 +25,7 @@ func fly_path() -> FlyPath:
 func tongue() -> Tongue:
 	var tongue_node = tongue_scene.instantiate() as Tongue
 	return tongue_node
+
+func shoot() -> Shoot:
+	var shoot_node = preload("res://actions/shoot.tscn").instantiate() as Shoot
+	return shoot_node

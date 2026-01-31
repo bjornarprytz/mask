@@ -8,12 +8,31 @@ extends Node2D
 @onready var head: Head = %Head
 @onready var tongue_anchor: Node2D = %TongueAnchor
 
-var tongue: Tongue = null
+var shoot_action: Shoot = null
+var is_shooting: bool = false
 
-func _ready() -> void:
-	Events.chameleonardo = self
 
 func _process(delta: float) -> void:
+	if (not is_shooting):
+		_move_body(delta)
+	_move_head(delta)
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("shoot"):
+		if (is_shooting): # Acts as a cooldown
+			return
+		is_shooting = true
+		shoot_action = Create.shoot()
+		tongue_anchor.add_child(shoot_action)
+	if event.is_action_released("shoot"):
+		if (is_shooting == false):
+			return
+		shoot_action.fire()
+		await shoot_action.finished
+		is_shooting = false
+
+
+func _move_body(delta: float) -> void:
 	var input_vector = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down", .1)
 	
 	if input_vector != Vector2.ZERO:
@@ -24,33 +43,12 @@ func _process(delta: float) -> void:
 		# Move forward based on current rotation
 		var forward = Vector2.RIGHT.rotated(rotation)
 		position += forward * input_vector.length() * move_speed * delta
+	
 
-	var secondary_vector = get_secondary_vector()
+func _move_head(_delta: float) -> void:
+	var aim_vector = Controls.get_aim(head.global_position)
 
-	if secondary_vector != Vector2.ZERO:
-		head.global_rotation = secondary_vector.angle()
+	if aim_vector != Vector2.ZERO:
+		head.global_rotation = aim_vector.angle()
 	else:
 		head.rotation = lerp_angle(head.rotation, 0.0, 0.1)
-		
-	
-func get_secondary_vector() -> Vector2:
-	if Events.control_scheme == Events.ControlScheme.GAMEPAD:
-		return Input.get_vector("secondary_left", "secondary_right", "secondary_up", "secondary_down", .1)
-	else:
-		var mouse_pos = get_global_mouse_position()
-		return mouse_pos - head.global_position
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("shoot"):
-		if (tongue != null): # Acts as a cooldown
-			return
-		tongue = Create.tongue()
-		tongue_anchor.add_child(tongue)
-		tongue.position = Vector2.ZERO
-		tongue.rotation = 0.0
-		var secondary_vector = get_secondary_vector()
-		tongue.shoot(tongue_anchor.global_position + secondary_vector.normalized() * 200.0)
-		tongue.hit.connect(_on_hit, CONNECT_ONE_SHOT)
-
-func _on_hit(fly: Fly) -> void:
-	fly.die()
