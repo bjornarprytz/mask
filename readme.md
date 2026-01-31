@@ -15,8 +15,11 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 - Tweak flies
   - Faster
   - Avoid player
+- Entry screen
+  - Enter -> Keyboard
+  - Gamepad:A -> Gamepad
 - Palette?
-- Gamepad issues
+
 
 ### Extra
 

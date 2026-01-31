@@ -1,13 +1,17 @@
-[gd_scene format=3 uid="uid://c6xvv2r524gst"]
+[gd_scene load_steps=4 format=3 uid="uid://c6xvv2r524gst"]
 
 [ext_resource type="Script" uid="uid://dc20sermvc87q" path="res://entry.gd" id="1_rixl5"]
 
-[node name="Entry" type="Node2D" unique_id=262703182]
+[sub_resource type="ButtonGroup" id="ButtonGroup_rixl5"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_jnwwp"]
+
+[node name="Entry" type="Node2D"]
 script = ExtResource("1_rixl5")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1988987056]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=702400051]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -16,17 +20,29 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer" unique_id=56532806]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
 
-[node name="KeyboardButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer" unique_id=1233953595]
+[node name="StartButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
 layout_mode = 2
+text = "Start"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="KeyboardButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_rixl5")
 text = "Keyboard"
 
-[node name="GamepadButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer" unique_id=1798537007]
+[node name="GamepadButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_jnwwp")
 text = "Gamepad
 "
 
-[connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/KeyboardButton" to="." method="_on_keyboard_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/GamepadButton" to="." method="_on_gamepad_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/KeyboardButton" to="." method="_on_keyboard_button_toggled"]
+[connection signal="toggled" from="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/GamepadButton" to="." method="_on_gamepad_button_toggled"]

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" format=3 uid="uid://cwi2l6qtt6la6"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cwi2l6qtt6la6"]
 
 [ext_resource type="Texture2D" uid="uid://b3j5t5dtouj45" path="res://assets/panel-texture.png" id="1_ekht3"]
 [ext_resource type="FontFile" uid="uid://dm08mvl84ygq3" path="res://assets/fonts/Fira_Code/static/FiraCode-Regular.ttf" id="2_ekht3"]
