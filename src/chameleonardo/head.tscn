@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://b50jnsr1emch2"]
 
-[ext_resource type="Texture2D" uid="uid://but5ope2qlm27" path="res://assets/img/spades-medium.png" id="1_fmqtp"]
+[ext_resource type="Texture2D" uid="uid://s5hchckmjbv2" path="res://assets/img/what_is_our_heading-0011-sheet.png" id="1_t62po"]
 [ext_resource type="Script" uid="uid://d13kmjen26iwy" path="res://chameleonardo/head.gd" id="2_cns5y"]
 [ext_resource type="Texture2D" uid="uid://cy2hqrjani3ot" path="res://assets/img/eye_eye_captain-sheet.png" id="2_t62po"]
 
@@ -62,7 +62,7 @@ size = Vector2(217.99997, 434)
 
 [node name="Head" type="Sprite2D"]
 texture_filter = 1
-texture = ExtResource("1_fmqtp")
+texture = ExtResource("1_t62po")
 offset = Vector2(16, 0)
 script = ExtResource("2_cns5y")
 

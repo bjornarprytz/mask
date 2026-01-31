@@ -1,9 +1,94 @@
-[gd_scene load_steps=11 format=3 uid="uid://b50dkk78u0h5e"]
+[gd_scene load_steps=23 format=3 uid="uid://b50dkk78u0h5e"]
 
 [ext_resource type="Script" uid="uid://djhoi0abhg5ug" path="res://chameleonardo/chameleonardo.gd" id="1_20x5n"]
-[ext_resource type="Texture2D" uid="uid://ct5b805pkx24r" path="res://assets/img/water-cooler.png" id="2_ch3hi"]
+[ext_resource type="Texture2D" uid="uid://x24xq6atfo64" path="res://assets/img/chameleon-sheet.png" id="2_2uhhw"]
 [ext_resource type="PackedScene" uid="uid://b50jnsr1emch2" path="res://chameleonardo/head.tscn" id="3_2uhhw"]
 [ext_resource type="Texture2D" uid="uid://btxfqugpryg5b" path="res://assets/img/dead_men_tell_no_tails.png" id="5_14qgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwsuo"]
+atlas = ExtResource("2_2uhhw")
+region = Rect2(0, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1u1u"]
+atlas = ExtResource("2_2uhhw")
+region = Rect2(120, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pv7e"]
+atlas = ExtResource("2_2uhhw")
+region = Rect2(240, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y0a1"]
+atlas = ExtResource("2_2uhhw")
+region = Rect2(360, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khx6r"]
+atlas = ExtResource("2_2uhhw")
+region = Rect2(480, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybrkw"]
+atlas = ExtResource("2_2uhhw")
+region = Rect2(600, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5ayb"]
+atlas = ExtResource("2_2uhhw")
+region = Rect2(720, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv6gg"]
+atlas = ExtResource("2_2uhhw")
+region = Rect2(840, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0anpw"]
+atlas = ExtResource("2_2uhhw")
+region = Rect2(960, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgo6h"]
+atlas = ExtResource("2_2uhhw")
+region = Rect2(1080, 0, 120, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnwrm"]
+atlas = ExtResource("2_2uhhw")
+region = Rect2(1200, 0, 120, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o1yb8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwsuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1u1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pv7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y0a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khx6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybrkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5ayb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv6gg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0anpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgo6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnwrm")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pmbl"]
 atlas = ExtResource("5_14qgy")
@@ -51,13 +136,12 @@ animations = [{
 [node name="Chameleonardo" type="Node2D"]
 script = ExtResource("1_20x5n")
 
-[node name="Body" type="Sprite2D" parent="."]
+[node name="Body" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 texture_filter = 1
-position = Vector2(-21.960245, -5.665103e-07)
-rotation = 1.5707964
-scale = Vector2(1, 1.8100153)
-texture = ExtResource("2_ch3hi")
+position = Vector2(-25, -4)
+sprite_frames = SubResource("SpriteFrames_o1yb8")
+animation = &"walk"
 
 [node name="Head" parent="." instance=ExtResource("3_2uhhw")]
 unique_name_in_owner = true
@@ -68,7 +152,7 @@ position = Vector2(27, 0)
 
 [node name="Tail" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-88, 0)
+position = Vector2(-88, -2)
 sprite_frames = SubResource("SpriteFrames_ahm5s")
 animation = &"wag"
 autoplay = "wag"

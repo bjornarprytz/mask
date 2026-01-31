@@ -4,13 +4,14 @@ extends Node2D
 @export var move_speed: float = 100.0
 @export var rotation_speed: float = 2.0
 
-@onready var body: Sprite2D = %Body
+@onready var body: AnimatedSprite2D = %Body
 @onready var head: Head = %Head
 @onready var tongue_anchor: Node2D = %TongueAnchor
 
 var shoot_action: Shoot = null
 var is_shooting: bool = false
 
+var color_tween: Tween
 
 func _process(delta: float) -> void:
 	if (not is_shooting):
@@ -30,6 +31,15 @@ func _input(event: InputEvent) -> void:
 		shoot_action.fire()
 		await shoot_action.finished
 		is_shooting = false
+	if event.is_action_pressed("chamele"):
+		_chamele()
+
+func _chamele():
+	# TODO: Check the color of the (sprite) underneath
+	var color = Palette.colors.pick_random()
+
+	color_tween = create_tween()
+	color_tween.tween_property(self, "modulate", color, 1.5)
 
 
 func _move_body(delta: float) -> void:
