@@ -9,9 +9,9 @@ var fly_path_scene: PackedScene = preload("res://fly_path.tscn")
 var fly_scene: PackedScene = preload("res://fly.tscn")
 var tongue_scene: PackedScene = preload("res://tongue.tscn")
 
-func feature(color: Color) -> Node2D:
-	var feature_node = feature_scene.instantiate() as Node2D
-	feature_node.modulate = color
+func feature(color: Color) -> Feature:
+	var feature_node = feature_scene.instantiate() as Feature
+	feature_node.set_color(color)
 	return feature_node
 
 func fly() -> Fly:

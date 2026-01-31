@@ -4,7 +4,19 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 
 ## TODO
 
-- Palette
+- Player
+  - Change color
+  - Stealth mechanics
+  - Eyes twitch around when there's no target
+- Tweak tongue
+  - Speed
+  - Sound
+  - Hitbox
+- Tweak flies
+  - Faster
+  - Avoid player
+- Palette?
+- Gamepad issues
 
 ### Extra
 

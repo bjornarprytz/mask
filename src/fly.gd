@@ -2,7 +2,7 @@ class_name Fly
 extends PathFollow2D
 
 var path: FlyPath
-@export var move_speed: float = 20.0
+@export var move_speed: float = 120.0
 
 func die():
 	queue_free()
