@@ -1,10 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6xvv2r524gst"]
+[gd_scene load_steps=3 format=3 uid="uid://c6xvv2r524gst"]
 
 [ext_resource type="Script" uid="uid://dc20sermvc87q" path="res://entry.gd" id="1_rixl5"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_rixl5"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_jnwwp"]
 
 [node name="Entry" type="Node2D"]
 script = ExtResource("1_rixl5")
@@ -23,23 +21,48 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
 
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "One more fly"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
 [node name="StartButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Start"
+
+[node name="Control" type="Control" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Explanation" type="RichTextLabel" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Pick controls:"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="KeyboardButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_rixl5")
 text = "Keyboard"
 
 [node name="GamepadButton" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
-button_group = SubResource("ButtonGroup_jnwwp")
+button_group = SubResource("ButtonGroup_rixl5")
 text = "Gamepad
 "
 

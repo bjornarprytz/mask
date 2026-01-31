@@ -6,9 +6,10 @@ func setup():
 	set_save_path("res://generated/global_theme.tres")
 
 
+
 var button_color = Color("12422eff")
 var button_hover_color = button_color.darkened(0.1)
-var button_pressed_color = button_color.darkened(0.15)
+var button_pressed_color = button_color.darkened(0.85)
 var button_border_color = Color("00a465ff")
 var default_border_width = 4 
 var default_corner_radius = 5
