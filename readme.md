@@ -8,21 +8,20 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
   - Stealth mechanics
     - Flies avoid player
 
+- Word game
+  - Eat flies, get their letter added to the goal
+
 - Tweak tongue
   - Juicy death effect
 
-- Tweak palette
-
-- Style
-  - Font
-  - Title screen
-
 - Visual effects
   - Shadow on the player
+  - Shadow on flies
   - Particles on tongue (droplets)
   - Screen shake on hit
 
 - Sound effects
+  - Pitch follows engine time scale
   - Tonguge
     - Shoot
     - Slurp

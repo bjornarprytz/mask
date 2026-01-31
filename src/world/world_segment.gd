@@ -29,11 +29,11 @@ func delay(t: float):
 
 func spawn_fly(local_pos: Vector2) -> void:
 	var fly = Create.fly()
-	fly.position = local_pos
-	add_child(fly)
+	fly.global_position = self.to_global(local_pos)
+	get_tree().root.add_child(fly)
 
 func spawn_feature(local_pos: Vector2) -> void:
 	var feature = Create.feature(Palette.colors.pick_random())
-	feature.position = local_pos
+	feature.global_position = self.to_global(local_pos)
 	feature.rotation_degrees = randf_range(0, 360)
-	add_child(feature)
+	get_tree().root.add_child(feature)

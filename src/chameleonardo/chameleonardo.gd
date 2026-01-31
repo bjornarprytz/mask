@@ -14,9 +14,11 @@ extends Node2D
 var shoot_action: Shoot = null
 var is_shooting: bool = false
 
-var movement_distance = 10000.0
+var movement_distance = 10000.0 # Otherwise backwards movement doesn't animate from the get go
 
 var color_tween: Tween
+
+var stealth_range := 0.0
 
 func _process(delta: float) -> void:
 	if (not is_shooting):
@@ -53,9 +55,11 @@ func _chamele():
 
 func _get_feature() -> Feature:
 	var areas = chamele_sense.get_overlapping_areas()
+	
 	areas.reverse()
 	for area in areas:
 		if area.owner is Feature:
+			print("Found feature %s" % area.owner)
 			return area.owner
 		
 	return null

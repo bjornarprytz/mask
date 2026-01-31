@@ -7,10 +7,9 @@ func setup():
 
 
 
-var button_color = Color("12422eff")
-var button_hover_color = button_color.darkened(0.1)
-var button_pressed_color = button_color.darkened(0.85)
-var button_border_color = Color("00a465ff")
+var button_color = Color("9b5de5")
+var main_button_color = Color("fad752")
+var button_border_color = Color.BLACK
 var default_border_width = 4 
 var default_corner_radius = 5
 var default_font_size = 48
@@ -34,13 +33,25 @@ func define_theme():
 		border_ = border_width(default_border_width),
 		corner_ = corner_radius(default_corner_radius)
 	})
+	
+	var main_button_style = inherit(button_style, {
+		bg_color = main_button_color,
+	})
+	
+	var main_button_hover_style = inherit(main_button_style, {
+		bg_color = main_button_color.darkened(.1)
+	})
+
+	var main_button_pressed_style = inherit(main_button_style, {
+		bg_color = main_button_color.darkened(.85)
+	})
 
 	var button_hover_style = inherit(button_style, {
-		bg_color = button_hover_color
+		bg_color = button_color.darkened(.1)
 	})
 
 	var button_pressed_style = inherit(button_style, {
-		bg_color = button_pressed_color
+		bg_color = button_color.darkened(.85)
 	})
 	
 	define_style("PanelContainer", {
@@ -63,4 +74,11 @@ func define_theme():
 		normal = button_style,
 		hover = button_hover_style,
 		pressed = button_pressed_style,
+	})
+	
+	define_variant_style("MainButton", "Button", {
+		normal = main_button_style,
+		font_color = Color.BLACK,
+		hover = main_button_hover_style,
+		pressed = main_button_pressed_style
 	})

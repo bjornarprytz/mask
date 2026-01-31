@@ -43,4 +43,5 @@ func _on_timer_timeout() -> void:
 
 
 func _on_start_button_mouse_entered() -> void:
-	await NodeEffects.jiggle(start_button)
+	#await NodeEffects.sheen(start_button)
+	pass
