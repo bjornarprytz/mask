@@ -5,16 +5,14 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 ## TODO
 
 - Player
-  - Change color
   - Stealth mechanics
+    - Flies avoid player
   - Eyes twitch around when there's no target
-  - World
-    - Palette
 
 - Tweak tongue
   - Juicy death effect
-- Tweak flies
-  - Avoid player (if not in stealth)
+
+- Tweak palette
 
 ### Extra
 

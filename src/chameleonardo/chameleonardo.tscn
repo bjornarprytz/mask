@@ -148,6 +148,7 @@ unique_name_in_owner = true
 
 [node name="TongueAnchor" type="Node2D" parent="Head"]
 unique_name_in_owner = true
+show_behind_parent = true
 position = Vector2(27, 0)
 
 [node name="Tail" type="AnimatedSprite2D" parent="."]
