@@ -5,13 +5,8 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 ## TODO
 
 - Tweak tongue
-  - Click
-  - Player movement stops
-  - Time slows down
   - Camera zooms in a bit
-  - Player aims at a fly
-  - Release
-  - Tongue shoots out
+  - Juicy death effect
 
 - Player
   - Change color

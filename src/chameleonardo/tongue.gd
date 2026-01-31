@@ -13,6 +13,8 @@ signal hit(fly: Fly)
 signal retracted()
 signal done()
 
+var is_done = false
+
 func _process(_delta: float) -> void:
 	# Rotate the tongue towards the target vector
 	if target_vector != Vector2.ZERO:
@@ -47,3 +49,4 @@ func _retract():
 func _on_retracted():
 	retracted.emit()
 	done.emit()
+	is_done = true

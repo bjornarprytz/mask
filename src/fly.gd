@@ -3,7 +3,7 @@ extends PathFollow2D
 
 var chars := "abcdefghijklnopqrstuxyzæøå123456789"
 var path: FlyPath
-@export var move_speed: float = 200.0
+@export var move_speed: float = 250.0
 @export var flap_speed: float = 20.0
 
 @onready var r_wing: Node2D = %RWing
@@ -11,13 +11,16 @@ var path: FlyPath
 @onready var r_form: RichTextLabel = %RForm
 @onready var l_form: RichTextLabel = %LForm
 
-@onready var flap_offset =  randf()
+@onready var flap_offset = randf()
 
 func set_form(l: String):
 	r_form.bbcode_text = l
 	l_form.bbcode_text = l
 
-func die():
+func die(with_effect: bool = true) -> void:
+	if with_effect:
+		# TODO: Add death effect
+		pass
 	queue_free()
 	path.queue_free()
 
@@ -31,7 +34,7 @@ func _ready() -> void:
 	# Start from the beginning of the path
 	progress = 0.0
 	
-	set_form(chars[randi_range(0, chars.length()-1)])
+	set_form(chars[randi_range(0, chars.length() - 1)])
 
 func _check_distance_to_chameleonardo() -> void:
 	var chameleonardo = Events.game.chameleonardo
@@ -40,7 +43,7 @@ func _check_distance_to_chameleonardo() -> void:
 	
 	var distance = global_position.distance_to(chameleonardo.global_position)
 	if distance > 800.0:
-		die()
+		die(false)
 
 func _process(delta: float) -> void:
 	# Move along the path

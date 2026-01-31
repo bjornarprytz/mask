@@ -8,6 +8,3 @@ extends Node2D
 
 func _ready() -> void:
 	Events.game = self
-
-func _process(delta: float) -> void:
-	camera.global_position = lerp(camera.global_position, chameleonardo.global_position, delta)
