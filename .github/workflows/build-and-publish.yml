@@ -10,7 +10,7 @@ env:
   ITCHIO_USERNAME: thewarlock
   GAME_NAME: mask
   PROJECT_PATH: "./src/"
-  GODOT_VERSION: 4.6-stable
+  GODOT_VERSION: 4.5-stable
 
 jobs:
   export-game:
