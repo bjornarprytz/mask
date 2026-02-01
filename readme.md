@@ -4,10 +4,9 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 
 ## TODO
 
-- Lock head while shooting tongue
+- End credits
 
-- Word game
-  - Eat flies, get their letter added to the goal
+- Lock head while shooting tongue
 
 - Tweak tongue
   - Juicy death effect
