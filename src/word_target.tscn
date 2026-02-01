@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://br808a46lcwvj"]
+
+[ext_resource type="Script" uid="uid://dpg0r2yoge18t" path="res://word_target.gd" id="1_kvqcd"]
+
+[node name="WordGame" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0.5019608)
+offset_right = 48.0
+offset_bottom = 59.0
+script = ExtResource("1_kvqcd")
+
+[node name="Letters" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+alignment = 1

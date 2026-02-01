@@ -4,6 +4,8 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 
 ## TODO
 
+- Lock head while shooting tongue
+
 - Word game
   - Eat flies, get their letter added to the goal
 

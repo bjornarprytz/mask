@@ -18,7 +18,7 @@ var panel_texture = preload("res://assets/panel-texture.png")
 
 var default_font = preload("res://assets/fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf")
 var title_font = preload("res://assets/fonts/it-gridbit-demo/ITGridbitDemo-Regular.otf")
-var default_content_margins = content_margins(45, 35)
+var default_content_margins = content_margins(24, 15)
 
 func define_theme():
 	define_default_font(default_font)

@@ -5,10 +5,10 @@
 [ext_resource type="FontFile" uid="uid://cp6gm3onst21u" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="3_arlvn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arlvn"]
-content_margin_left = 45.0
-content_margin_top = 35.0
-content_margin_right = 45.0
-content_margin_bottom = 35.0
+content_margin_left = 24.0
+content_margin_top = 15.0
+content_margin_right = 24.0
+content_margin_bottom = 15.0
 bg_color = Color(0.5470588, 0.3282353, 0.8082353, 1)
 border_width_left = 4
 border_width_top = 4
@@ -21,10 +21,10 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bq3ui"]
-content_margin_left = 45.0
-content_margin_top = 35.0
-content_margin_right = 45.0
-content_margin_bottom = 35.0
+content_margin_left = 24.0
+content_margin_top = 15.0
+content_margin_right = 24.0
+content_margin_bottom = 15.0
 bg_color = Color(0.60784316, 0.3647059, 0.8980392, 1)
 border_width_left = 4
 border_width_top = 4
@@ -37,10 +37,10 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6bo0"]
-content_margin_left = 45.0
-content_margin_top = 35.0
-content_margin_right = 45.0
-content_margin_bottom = 35.0
+content_margin_left = 24.0
+content_margin_top = 15.0
+content_margin_right = 24.0
+content_margin_bottom = 15.0
 bg_color = Color(0.09117646, 0.054705873, 0.13470586, 1)
 border_width_left = 4
 border_width_top = 4
@@ -53,10 +53,10 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfd5p"]
-content_margin_left = 45.0
-content_margin_top = 35.0
-content_margin_right = 45.0
-content_margin_bottom = 35.0
+content_margin_left = 24.0
+content_margin_top = 15.0
+content_margin_right = 24.0
+content_margin_bottom = 15.0
 bg_color = Color(0.88235295, 0.7588235, 0.28941175, 1)
 border_width_left = 4
 border_width_top = 4
@@ -69,10 +69,10 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahide"]
-content_margin_left = 45.0
-content_margin_top = 35.0
-content_margin_right = 45.0
-content_margin_bottom = 35.0
+content_margin_left = 24.0
+content_margin_top = 15.0
+content_margin_right = 24.0
+content_margin_bottom = 15.0
 bg_color = Color(0.98039216, 0.84313726, 0.32156864, 1)
 border_width_left = 4
 border_width_top = 4
@@ -85,10 +85,10 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkrlu"]
-content_margin_left = 45.0
-content_margin_top = 35.0
-content_margin_right = 45.0
-content_margin_bottom = 35.0
+content_margin_left = 24.0
+content_margin_top = 15.0
+content_margin_right = 24.0
+content_margin_bottom = 15.0
 bg_color = Color(0.1470588, 0.12647057, 0.04823529, 1)
 border_width_left = 4
 border_width_top = 4
@@ -101,10 +101,10 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o25jx"]
-content_margin_left = 45.0
-content_margin_top = 35.0
-content_margin_right = 45.0
-content_margin_bottom = 35.0
+content_margin_left = 24.0
+content_margin_top = 15.0
+content_margin_right = 24.0
+content_margin_bottom = 15.0
 texture = ExtResource("1_ekht3")
 texture_margin_left = 9.0
 texture_margin_top = 9.0

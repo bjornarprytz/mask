@@ -3,7 +3,7 @@ extends Node2D
 
 @export var body_frame_count: int = 10
 
-@export var move_speed: float = 30.0
+@export var move_speed: float = 69.0
 @export var rotation_speed: float = 2.0
 
 @onready var body: AnimatedSprite2D = %Body

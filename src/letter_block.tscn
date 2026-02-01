@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://8po6uw2bhob"]
+
+[ext_resource type="Script" uid="uid://63la4a6j0won" path="res://letter_block.gd" id="1_8xgqk"]
+
+[node name="LetterBlock" type="RichTextLabel"]
+text = "A"
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("1_8xgqk")

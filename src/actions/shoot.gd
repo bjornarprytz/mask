@@ -4,7 +4,7 @@ extends Node2D
 @onready var tongue: Tongue = %Tongue
 
 @export var shoot_range: float = 200.0
-@export var max_zoom: Vector2 = Vector2.ONE * 3.0
+@export var max_zoom: Vector2 = Vector2.ONE * 2.0
 
 @onready var camera: Camera2D = Events.game.camera
 @onready var orig_zoom: Vector2 = camera.zoom
@@ -56,6 +56,7 @@ func fire():
 
 func _on_hit(fly: Fly) -> void:
 	fly.die()
+	Events.hit_letter.emit(fly.letter)
 
 
 func _clean_up() -> void:
