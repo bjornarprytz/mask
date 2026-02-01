@@ -46,8 +46,8 @@ func _process(_delta: float) -> void:
 			var distance = randf_range(800.0, 1000.0)
 			var spawn_pos = chameleonardo.global_position + Vector2.RIGHT.rotated(angle) * distance
 			var fly = Create.fly()
-			fly_parent.add_child(fly)
 			fly.global_position = spawn_pos
+			fly_parent.add_child(fly)
 		
 
 func get_segment_coords_at_position(pos: Vector2i) -> Vector2i:

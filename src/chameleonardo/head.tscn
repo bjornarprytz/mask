@@ -98,6 +98,8 @@ position = Vector2(22, 11)
 sprite_frames = SubResource("SpriteFrames_7pbch")
 animation = &"eye"
 
+[node name="Ears" type="AudioListener2D" parent="."]
+
 [connection signal="area_entered" from="LeftEyeSensor" to="." method="_on_left_eye_sensor_area_entered"]
 [connection signal="area_exited" from="LeftEyeSensor" to="." method="_on_left_eye_sensor_area_exited"]
 [connection signal="area_entered" from="RightEyeSensor" to="." method="_on_right_eye_sensor_area_entered"]

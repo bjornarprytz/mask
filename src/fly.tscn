@@ -113,4 +113,7 @@ rotation = -1.5707964
 [node name="Sounds" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_k06e4")
-max_distance = 500.0
+autoplay = true
+max_distance = 200.0
+attenuation = 1.9318731
+panning_strength = 2.0
