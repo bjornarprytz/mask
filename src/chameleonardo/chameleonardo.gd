@@ -56,12 +56,13 @@ func _get_feature() -> Feature:
 	var areas = chamele_sense.get_overlapping_areas()
 	
 	areas.reverse()
+	var highest_feature : Feature = null
 	for area in areas:
 		if area.owner is Feature:
-			print("Found feature %s" % area.owner)
-			return area.owner
-		
-	return null
+			if highest_feature == null or area.owner.get_index() > highest_feature.get_index():
+				highest_feature = area.owner as Feature
+
+	return highest_feature
 
 
 func _move_body(delta: float) -> void:

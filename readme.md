@@ -8,15 +8,6 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
 
 - Lock head while shooting tongue
 
-- Tweak tongue
-  - Juicy death effect
-
-- Visual effects
-  - Shadow on the player
-  - Shadow on flies
-  - Particles on tongue (droplets)
-  - Screen shake on hit
-
 - Sound effects
   - Pitch follows engine time scale
   - Tonguge
@@ -27,7 +18,29 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
     - Buzz
     - Splat
 
+- Tweak tongue
+  - Juicy death effect
+
+- Visual effects
+  - Shadow on the player
+  - Shadow on flies
+  - Particles on tongue (droplets)
+  - Screen shake on hit
+
+## Bugs
+
+- Chameling lower leaves
+- Bugs and leaves sharing parent (bugs flying under leaves)
+
 ## Nice to have
+
+- Game modes:
+  - Word count
+  - Endless
+
+- High score:
+  - Score based on length of tongue on hit
+  - Multiplier on word for having variety
 
 - Player
   - Eyes twitch around when there's no target

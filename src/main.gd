@@ -17,8 +17,15 @@ var current_word: String
 func _ready() -> void:
 	Events.game = self
 	current_word = word_pool.pick_random()
+	word_pool.erase(current_word)
 	word_game.set_target(current_word)
 
 
 func _on_word_game_word_completed() -> void:
-	Events.game_over.emit()
+
+	if word_pool.size() == 0:
+		Events.game_over.emit(true)
+		return
+	current_word = word_pool.pick_random()
+	word_pool.erase(current_word)
+	word_game.set_target(current_word)

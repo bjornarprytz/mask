@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func _on_hit_letter(letter: String) -> void:
 	for child in letters.get_children():
-		if child.text == letter and not child.is_scored:
+		if child.text == letter.to_upper() and not child.is_scored:
 			child.score(Events.game.chameleonardo.modulate)
 			break
 	
@@ -25,6 +25,6 @@ func set_target(word: String):
 		await child.end()
 	for c in word:
 		var block = preload("res://letter_block.tscn").instantiate() as LetterBlock
-		block.text = c
+		block.text = c.to_upper()
 		await get_tree().create_timer(.1).timeout
 		letters.add_child(block)
