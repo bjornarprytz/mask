@@ -54,6 +54,7 @@ func play(audio_stream: AudioStream, global_pos := Vector2.ZERO):
 	p.pitch_scale = randf_range(.98, 1.02)
 	p.play()
 	p.finished.connect(_release_player.bind(p), CONNECT_ONE_SHOT)
+	return p.finished
 
 func _get_player(global_pos := Vector2.ZERO) -> Variant:
 	if (global_pos != Vector2.ZERO):

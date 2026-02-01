@@ -17,6 +17,9 @@ chameleonardo = NodePath("../Chameleonardo")
 unique_name_in_owner = true
 position = Vector2(663, 328)
 rotation = -1.5707964
+body_frame_count = 10
+move_speed = 69.0
+rotation_speed = 2.0
 
 [node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 unique_name_in_owner = true

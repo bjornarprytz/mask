@@ -22,7 +22,8 @@ var color_tween: Tween
 func _process(delta: float) -> void:
 	if (not is_shooting):
 		_move_body(delta)
-	_move_head(delta)
+	if (!is_shooting or !shoot_action.is_firing):
+		_move_head(delta)
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):
@@ -118,9 +119,10 @@ func _check_stealth(is_moving: bool) -> void:
 
 	var feature = _get_feature()
 	if feature == null or feature.color != self.modulate:
-		level += 1
+		level += 3
 	if is_shooting:
 		level += 1
 	if is_moving:
 		level += 1
+	level += 1 # Base visibility
 	stealth.set_level(level)

@@ -2,8 +2,13 @@ class_name Game
 extends Node2D
 
 var word_pool: Array[String] = [
+	"ZEN",
 	"MASK",
+	"INSECT",
+	"SLOWLY",
 	"FLOWER",
+	"INSECT",
+	"MONSTERA",
 	"CHAMELEON",
 ]
 

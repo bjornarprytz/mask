@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd1is4bj4fe16"]
+
+[ext_resource type="Script" uid="uid://b15qeje0y6jlv" path="res://end_credits.gd" id="1_dhqpa"]
+[ext_resource type="Texture2D" uid="uid://djhb2teobhi2b" path="res://assets/img/onemoreflylogo.png" id="2_68kyt"]
+[ext_resource type="Texture2D" uid="uid://dajt1okcf10iy" path="res://assets/Tvibit.png" id="2_b4ss7"]
+[ext_resource type="Texture2D" uid="uid://c1h83o5d73r45" path="res://assets/UiT_Segl_Eng_Hvit_960px.png" id="3_5a716"]
+[ext_resource type="PackedScene" uid="uid://blkyyoapwotmd" path="res://fly.tscn" id="4_5a716"]
+
+[node name="EndCredits" type="Node2D"]
+script = ExtResource("1_dhqpa")
+
+[node name="Klara" type="AudioStreamPlayer" parent="."]
+
+[node name="OneMoreFly" parent="." instance=ExtResource("4_5a716")]
+position = Vector2(633, 390)
+move_speed = 30.0
+flap_speed = 5.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -346.5
+offset_right = 346.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScrollContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control2" type="Control" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_68kyt")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Control4" type="Control" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+
+[node name="Credits" type="RichTextLabel" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Storskogen Spillutviklingslaug
+
+Bjørnar - programming
+Axel - art
+Marja - music / sfx
+Klara - sfx, bzzz"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Thanks to" type="RichTextLabel" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Thanks to"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Control3" type="Control" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Logos" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Tvibit" type="TextureRect" parent="CanvasLayer/ScrollContainer/VBoxContainer/Logos"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_b4ss7")
+expand_mode = 4
+
+[node name="UiT" type="TextureRect" parent="CanvasLayer/ScrollContainer/VBoxContainer/Logos"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_5a716")
+expand_mode = 2
