@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgrejd4v5ywd3"]
+[gd_scene load_steps=6 format=3 uid="uid://cgrejd4v5ywd3"]
 
 [ext_resource type="Script" uid="uid://736gp2f48fi7" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c14js4o0ltlpm" path="res://world/world.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b50dkk78u0h5e" path="res://chameleonardo/chameleonardo.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://ikta2fosfijt" path="res://camera.gd" id="4_lquwl"]
-[ext_resource type="AudioStream" uid="uid://djs62uk2y1ucf" path="res://assets/audio/OneMoreFly.mp3" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://br808a46lcwvj" path="res://word_target.tscn" id="6_7mycd"]
 
 [node name="Main" type="Node2D"]
@@ -24,11 +23,6 @@ unique_name_in_owner = true
 position = Vector2(640, 360)
 script = ExtResource("4_lquwl")
 target = NodePath("../Chameleonardo")
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("5_lquwl")
-autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

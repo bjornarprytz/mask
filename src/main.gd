@@ -11,7 +11,6 @@ var current_word: String
 
 @onready var camera: Camera2D = %Camera
 @onready var chameleonardo: Chameleonardo = %Chameleonardo
-@onready var music: AudioStreamPlayer = %Music
 @onready var word_game: WordGame = %WordGame
 
 func _ready() -> void:
@@ -19,6 +18,8 @@ func _ready() -> void:
 	current_word = word_pool.pick_random()
 	word_pool.erase(current_word)
 	word_game.set_target(current_word)
+	
+	Audio.continue_theme(preload("res://assets/audio/OneMoreFly - tromme og bass.mp3"))
 
 
 func _on_word_game_word_completed() -> void:

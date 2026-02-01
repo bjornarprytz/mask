@@ -4,6 +4,7 @@ extends Node2D
 @export var n_2d_players: int = 4
 
 @export var db_adjust : float
+@onready var music: AudioStreamPlayer = %Music
 
 
 var _static_p: Array[AudioStreamPlayer] = []
@@ -12,6 +13,24 @@ var _2d_p: Array[AudioStreamPlayer2D] = []
 
 func _ready() -> void:
 	_allocate_players()
+
+func start_theme(song: AudioStream):
+	var tween = create_tween()
+	if music.playing:
+		tween.tween_property(music, "volume_db", -80, .69)
+	tween.tween_property(music, "volume_db", 0.0, .39)
+	tween.tween_callback(_start_song.bind(song))
+
+func continue_theme(song: AudioStream):
+	var playback_point = 0.0
+	if (music.stream):
+		playback_point = music.get_playback_position()
+	music.stream = song
+	music.play(playback_point)	
+
+func _start_song(song: AudioStream):
+	music.stream = song
+	music.play()
 
 func _allocate_players():
 	for i in range(n_static_players):

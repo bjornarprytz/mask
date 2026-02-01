@@ -6,6 +6,8 @@ extends Node2D
 @export var spawn_interval: float = 1.0
 @export var spawn_wave_size: float = 6.0
 
+@onready var fly_parent: Node2D = %FlyParent
+
 var segments: Dictionary[Vector2i, WorldSegment] = {}
 
 var current_segment_coord: Vector2i
@@ -44,7 +46,7 @@ func _process(_delta: float) -> void:
 			var distance = randf_range(800.0, 1000.0)
 			var spawn_pos = chameleonardo.global_position + Vector2.RIGHT.rotated(angle) * distance
 			var fly = Create.fly()
-			get_tree().root.call_deferred("add_child", fly)
+			fly_parent.add_child(fly)
 			fly.global_position = spawn_pos
 		
 

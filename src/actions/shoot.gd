@@ -39,7 +39,7 @@ func _move_time_to_target(target: float, duration: float):
 
 func _control_time(f: float):
 	Engine.time_scale = f
-	Events.game.music.pitch_scale = f
+	Audio.music.pitch_scale = f
 	
 
 func fire():

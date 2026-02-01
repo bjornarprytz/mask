@@ -4,3 +4,6 @@
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_6xmxd")
+
+[node name="FlyParent" type="Node2D" parent="."]
+unique_name_in_owner = true

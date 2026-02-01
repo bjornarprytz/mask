@@ -1,12 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://blkyyoapwotmd"]
+[gd_scene load_steps=14 format=3 uid="uid://blkyyoapwotmd"]
 
 [ext_resource type="Script" uid="uid://06ht2buj6rhn" path="res://fly.gd" id="1_qarim"]
 [ext_resource type="Theme" uid="uid://d2ql40tpyyiaj" path="res://bug_wings_theme.tres" id="2_7c42i"]
+[ext_resource type="AudioStream" uid="uid://cudq1mf8tmby6" path="res://assets/audio/bzzz1.wav" id="3_5qxig"]
+[ext_resource type="AudioStream" uid="uid://0dbup6yxsuou" path="res://assets/audio/bzzz2.wav" id="4_i0vu0"]
+[ext_resource type="AudioStream" uid="uid://ddvhy4y2qe4xs" path="res://assets/audio/bzzz3.wav" id="5_e3qkk"]
+[ext_resource type="AudioStream" uid="uid://h5jg6us38r0i" path="res://assets/audio/bzzz4.wav" id="6_uy870"]
+[ext_resource type="AudioStream" uid="uid://cc61hgic25luh" path="res://assets/audio/bzzz5.wav" id="7_rosxw"]
+[ext_resource type="AudioStream" uid="uid://do7r3hfw2rwcx" path="res://assets/audio/bzzz6.wav" id="8_tyms6"]
+[ext_resource type="AudioStream" uid="uid://bdorvl1u5q3ib" path="res://assets/audio/bzzz7.wav" id="9_b80in"]
+[ext_resource type="AudioStream" uid="uid://da1kw8kwchnen" path="res://assets/audio/bzzz8.wav" id="10_i26fa"]
+[ext_resource type="AudioStream" uid="uid://dwk5lajnvwud0" path="res://assets/audio/bzzz9.wav" id="11_4x2k7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mv3iy"]
 size = Vector2(12, 8)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_k06e4"]
+random_pitch = 1.1
+streams_count = 10
+stream_0/stream = ExtResource("3_5qxig")
+stream_1/stream = ExtResource("4_i0vu0")
+stream_2/stream = ExtResource("5_e3qkk")
+stream_3/stream = ExtResource("6_uy870")
+stream_4/stream = ExtResource("7_rosxw")
+stream_5/stream = ExtResource("7_rosxw")
+stream_6/stream = ExtResource("8_tyms6")
+stream_7/stream = ExtResource("9_b80in")
+stream_8/stream = ExtResource("10_i26fa")
+stream_9/stream = ExtResource("11_4x2k7")
+
 [node name="Fly" type="PathFollow2D"]
+z_index = 1
 script = ExtResource("1_qarim")
 
 [node name="RWing" type="Node2D" parent="."]
@@ -85,3 +109,8 @@ offset_top = 1.0
 offset_right = 18.0
 offset_bottom = 6.0
 rotation = -1.5707964
+
+[node name="Sounds" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_k06e4")
+max_distance = 500.0

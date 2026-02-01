@@ -12,6 +12,8 @@ var path: FlyPath
 @onready var l_form: RichTextLabel = %LForm
 @onready var startle: Node2D = %Startle
 
+@onready var sounds: AudioStreamPlayer2D = %Sounds
+
 @onready var flap_offset = randf()
 
 var letter: String = ""
@@ -40,6 +42,8 @@ func _ready() -> void:
 	
 	
 	set_form(Events.get_char())
+	
+	sounds.finished.connect(sounds.play)
 	
 
 func _check_distance_to_chameleonardo() -> void:

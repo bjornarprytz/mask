@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="one-more-fly"
-run/main_scene="uid://c6xvv2r524gst"
+run/main_scene="uid://crmcpqrhu3ybb"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0.40784314, 0.72156864, 0.5529412, 1)
 config/icon="res://icon.svg"
@@ -25,10 +25,10 @@ config/icon="res://icon.svg"
 Utility="*res://autoloads/utility.gd"
 Events="*res://autoloads/event_bus.gd"
 Create="*res://autoloads/factory.gd"
-Audio="*res://autoloads/audio_manager.gd"
 NodeEffects="*res://autoloads/node_effects.gd"
 Controls="*res://autoloads/controls.tscn"
 Palette="*res://autoloads/palette.tscn"
+Audio="*res://autoloads/audio_manager.tscn"
 
 [display]
 

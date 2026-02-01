@@ -8,6 +8,8 @@ extends Node2D
 func _ready() -> void:
 	if Events.control_scheme == EventBus.ControlScheme.KEYBOARD:
 		keyboard_button.button_pressed = true
+	
+	Audio.start_theme(preload("res://assets/audio/OneMoreFly - full.mp3"))
 
 func _on_keyboard_button_toggled(toggled_on: bool) -> void:
 	if (toggled_on):
