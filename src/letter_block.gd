@@ -10,8 +10,6 @@ func _ready() -> void:
 
 func score(color: Color) -> Tween:
 	is_scored = true
-	if (color == Color.WHITE):
-		color = Color.WEB_GRAY
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", color, .5)
 	return tween

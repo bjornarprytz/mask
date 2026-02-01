@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://63la4a6j0won" path="res://letter_block.gd" id="1_8xgqk"]
 
 [node name="LetterBlock" type="RichTextLabel"]
+modulate = Color(0.5019608, 0.5019608, 0.5019608, 1)
 text = "A"
 fit_content = true
 autowrap_mode = 0

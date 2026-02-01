@@ -37,6 +37,11 @@ func _input(event: InputEvent) -> void:
 		shoot_action.fire()
 		await shoot_action.finished
 		is_shooting = false
+	if event.is_action_pressed("cancel"):
+		if (is_shooting == false):
+			return
+		if shoot_action.cancel():
+			is_shooting = false
 	if event.is_action_pressed("chamele"):
 		_chamele()
 

@@ -13,6 +13,7 @@ signal finished()
 
 var time_tween: Tween
 var camera_tween: Tween
+var is_firing: bool = false
 
 
 func _ready() -> void:
@@ -43,6 +44,7 @@ func _control_time(f: float):
 	
 
 func fire():
+	is_firing = true
 	var aim = Controls.get_aim(global_position)
 	tongue.shoot(global_position + aim.normalized() * shoot_range)
 	tongue.hit.connect(_on_hit, CONNECT_ONE_SHOT)
@@ -58,13 +60,21 @@ func _on_hit(fly: Fly) -> void:
 	fly.die()
 	Events.hit_letter.emit(fly.letter)
 
+func cancel() -> bool:
+	if is_firing == true:
+		return false
+	_move_camera_to_zoom(orig_zoom, 0.3)
+	_move_time_to_target(1.0, 0.2)
+	_clean_up()
+
+	return true
 
 func _clean_up() -> void:
 	if time_tween != null and time_tween.is_running():
 		await time_tween.finished
 	
 	if camera_tween != null and camera_tween.is_running():
-		await camera_tween.finished
+		await camera_tween.finished    
 	
 	camera.target = Events.game.chameleonardo
 

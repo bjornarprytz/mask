@@ -15,7 +15,6 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
     - Slurp
     - Miss (funny sound?)
   - Flies
-    - Buzz
     - Splat
 
 - Tweak tongue
@@ -28,9 +27,6 @@ game on itch.io: [link](https://thewarlock.itch.io/mask)
   - Screen shake on hit
 
 ## Bugs
-
-- Chameling lower leaves
-- Bugs and leaves sharing parent (bugs flying under leaves)
 
 ## Nice to have
 
